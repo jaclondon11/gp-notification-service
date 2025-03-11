@@ -58,18 +58,18 @@ class GameEventHandlerTest {
     @Test
     void testPvpAttackEventMessage() {
         Map<String, Object> eventData = new HashMap<>();
-        eventData.put("attackerId", "Player123");
+        eventData.put("attackerId", "123");
         eventData.put("damageDealt", 150);
 
         String message = gameEventHandler.generateMessage("PVP_ATTACK", eventData);
 
-        assertEquals("You've been attacked by player Player123!, damage dealt 150", message);
+        assertEquals("You've been attacked by player 123!, damage dealt 150", message);
     }
 
     @Test
     void testPvpDefeatEventMessage() {
         Map<String, Object> eventData = new HashMap<>();
-        eventData.put("victorPlayerId", "Player456");
+        eventData.put("victorPlayerId", "456");
         eventData.put("battleLocation", "Dark Forest");
         String defeatTime = "2024-03-20T15:30:00Z";
         eventData.put("defeatTime", defeatTime);
@@ -80,7 +80,7 @@ class GameEventHandlerTest {
         Instant instant = Instant.parse(defeatTime);
         LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
         String expectedTime = dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-        String expectedMessage = String.format("You've been defeated by player Player456 in Dark Forest at %s!", expectedTime);
+        String expectedMessage = String.format("You've been defeated by player 456 in Dark Forest at %s!", expectedTime);
 
         assertEquals(expectedMessage, message);
     }

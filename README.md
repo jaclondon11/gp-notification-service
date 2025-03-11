@@ -78,3 +78,13 @@ Run the tests using:
 ```bash
 mvn test
 ```
+## Default Users Configuration
+
+The notification service comes with pre-configured users:
+
+- playerId: `1`: Game notifications enabled, Social disabled
+- playerId: `2`: Game notifications disabled, Social enabled
+- playerId: `3`: All notifications disabled
+- Any other player have all notification enabled
+
+These users can be used for testing notification preferences.

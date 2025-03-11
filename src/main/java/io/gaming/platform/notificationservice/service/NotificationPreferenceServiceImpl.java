@@ -19,19 +19,19 @@ public class NotificationPreferenceServiceImpl implements NotificationPreference
     @PostConstruct
     public void initializeDefaultUsers() {
         // Player 1: Social events disabled
-        updatePreference("player1", EventCategory.GAME, true);
-        updatePreference("player1", EventCategory.SOCIAL, false);
-        log.info("Initialized player1 preferences: Game enabled, Social disabled");
+        updatePreference("1", EventCategory.GAME, true);
+        updatePreference("1", EventCategory.SOCIAL, false);
+        log.info("Initialized player 1 preferences: Game enabled, Social disabled");
 
         // Player 2: Game events disabled
-        updatePreference("player2", EventCategory.GAME, false);
-        updatePreference("player2", EventCategory.SOCIAL, true);
+        updatePreference("2", EventCategory.GAME, false);
+        updatePreference("2", EventCategory.SOCIAL, true);
         log.info("Initialized player2 preferences: Game disabled, Social enabled");
 
         // Player 3: Both events disabled
-        updatePreference("player3", EventCategory.GAME, false);
-        updatePreference("player3", EventCategory.SOCIAL, false);
-        log.info("Initialized player3 preferences: Game disabled, Social disabled");
+        updatePreference("3", EventCategory.GAME, false);
+        updatePreference("3", EventCategory.SOCIAL, false);
+        log.info("Initialized player 3 preferences: Game disabled, Social disabled");
     }
 
     @Override
